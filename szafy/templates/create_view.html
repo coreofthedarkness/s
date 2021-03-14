@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Podaj wymiary szafki dla której chcesz obliczyc płyte w mm </h2>
+<form method="POST">
+    {{ form.as_p }}{% csrf_token %}
+    <input type='submit' value='zapisz'>
+</form>
+
+{% endblock %}

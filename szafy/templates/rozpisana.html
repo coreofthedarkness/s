@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id='whole'  >
+<div class='contentbox'>Rozpisana szafka</div> </br></br>
+    <div id='osoby' class='contentbox'>
+        Imię i nazwisko zleceniodawcy : Kuchnie Brata Alberta ltd </br>
+         </br></br>
+    </div>
+    <div id='nazwa' class='contentbox'>
+        Cel przeznaczenia szafki : {{ szafka.nazwa }} </br> szerokosc płyty : {{ szafka.plyta}}mm </br>
+        Wzór frotu : {{ szafka.wzor_frontu}} </br> Wzór ścian : {{ szafka.wzor_sciany}} </br> </br>
+    </div>
+    <div name='row'class="row">
+        <div class='cell'> </br></div>
+        <div class='cell'> Szerokość</br></div>
+        <div class='cell'> Wysokość </br></div>
+        <div class='cell'> Głębokość </br></div>
+
+    </div>
+    <div name='row' class="row">
+        <div class='cell'> Boki: </br></div>
+        <div class='cell'> </br></div>
+        <div class='cell'> {{ boki.y}} mm + | </br></div>
+        <div class='cell'> {{ boki.z}} mm   </br></div>
+
+    </div>
+    <div name='row'class="row">
+            <div class='cell'> Dol:  </br></div>
+            <div class='cell'> {{ dol.x }}mm + | </br></div>
+            <div class='cell'> </br></div>
+            <div class='cell'>{{ dol.z }}mm </br></div>
+
+    <div name='row' class="row">
+            <div class='cell'> Gora </br></div>
+            <div class='cell'> {{ gora.x }}mm + |</br></div>
+            <div class='cell'> </br></div>
+            <div class='cell'>{{ gora.z }}mm </br></div>
+    </div>
+    <div name='row' class="row"></div>
+            <div class='cell'> Front</br></div>
+            <div class='cell'> {{ front.x}}mm + ||</br></div>
+            <div class='cell'> {{ front.y}}mm + || </br></div>
+            <div class='cell'> </br></div>
+    </div>
+    <div name='row'class="row">
+            <div class='cell'> Plecy </br></div>
+            <div class='cell'> {{ szafka.szerokosc }}mm </br></div>
+            <div class='cell'> {{ szafka.wysokosc }}mm </br></div>
+            <div class='cell'> </br></div>
+
+    <div name='row'class="row">
+                <div class='cell'> półki x {{ szafka.ilosc_polek }} :</br></div>
+                <div class='cell'> {{ polki.x }}mm + | </br></div>
+                <div class='cell'> </br></div>
+                <div class='cell'> {{ polki.z }}mm </br></div>
+
+
+    </div>
+
+
+    </div>
+
+
+
+</div>
+
+{% endblock %}
+
+{% block content_2 %}
+
+czas jazdy samochodem :
+
+{%  endblock %}
