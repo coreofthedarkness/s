@@ -25,7 +25,7 @@ SECRET_KEY = 's1@o!3y4v(f*pjg01%-u0$1_3sl$!l2e#a65y=cq04xw)z%r_a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['daveoo.pythonanywhere.com']
+ALLOWED_HOSTS = ['daveoo.pythonanywhere.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'szafy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR,"szafy/szafy/templates"],
+        'DIRS': [BASE_DIR,"szafy/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

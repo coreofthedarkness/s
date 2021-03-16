@@ -10,6 +10,10 @@
     <div id='nazwa' class='contentbox'>
         Cel przeznaczenia szafki : {{ szafka.nazwa }} </br> szerokosc płyty : {{ szafka.plyta}}mm </br>
         Wzór frotu : {{ szafka.wzor_frontu}} </br> Wzór ścian : {{ szafka.wzor_sciany}} </br> </br>
+         {% if szafka.narozna == True  %} 
+           <p> Szafka Narożna : {{ szafka.glebokosc_wneki }}mm - glebokosci wneki </p>
+        {% endif %}
+
     </div>
     <div name='row'class="row">
         <div class='cell'> </br></div>
@@ -37,12 +41,20 @@
             <div class='cell'> </br></div>
             <div class='cell'>{{ gora.z }}mm </br></div>
     </div>
-    <div name='row' class="row"></div>
-            <div class='cell'> Front</br></div>
+    <div name='row' class="row">
+            <div class='cell'> ilosc drzwi : {{ szafka.ilosc_drzwi }}</br></div>
             <div class='cell'> {{ front.x}}mm + ||</br></div>
             <div class='cell'> {{ front.y}}mm + || </br></div>
             <div class='cell'> </br></div>
     </div>
+    {% if szafka.narozna == True  %} 
+    <div name='row' class="row">
+        <div class='cell'> przód szafki wneka </br></div>
+        <div class='cell'> {{ szafka.glebokosc_wneki }}mm + |</br></div>
+        <div class='cell'> {{ szafka.wysokosc }}mm  </br></div>
+        <div class='cell'> </br></div>
+    </div>
+    {% endif %}
     <div name='row'class="row">
             <div class='cell'> Plecy </br></div>
             <div class='cell'> {{ szafka.szerokosc }}mm </br></div>
@@ -60,7 +72,7 @@
 
 
     </div>
-
+</div>
 
 
 </div>

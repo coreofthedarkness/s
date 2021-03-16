@@ -16,6 +16,7 @@ class gora:
     z=0
     okleina="Okleina"
 class front:
+    ilosc_drzwi=0
     x=0
     y=0
     okleina="Okleina"
@@ -41,9 +42,28 @@ def szafka_rozpisana_view(request,id):
     gora_s.z =obj.glebokosc
 
     front_s = front()
-    front_s.x =obj.szerokosc - 4
-    front_s.y =obj.wysokosc - 9
-
+    front_s.ilosc_drzwi = obj.ilosc_drzwi
+    if (obj.narozna == False):
+        if ( front_s.ilosc_drzwi == 2 ):
+            front_s.x = obj.szerokosc / 2  - 4
+            front_s.y = obj.wysokosc - 9
+        elif ( front_s.ilosc_drzwi == 1 ):
+            front_s.x = obj.szerokosc - 4
+            front_s.y = obj.wysokosc - 9
+        else :
+            front_s.x = obj.szerokosc - 4
+            front_s.y = obj.wysokosc - 9
+    else :
+        if ( front_s.ilosc_drzwi == 2 ):
+            front_s.x = obj.szerokosc / 2  - 4 - obj.glebokosc_wneki
+            front_s.y = obj.wysokosc - 9
+        elif ( front_s.ilosc_drzwi == 1 ):
+            front_s.x = obj.szerokosc - 4 - obj.glebokosc_wneki
+            front_s.y = obj.wysokosc - 9
+        else :
+            front_s.x = obj.szerokosc - 4 - obj.glebokosc_wneki
+            front_s.y = obj.wysokosc - 9
+            
     polki_s = polki()
     polki_s.x =obj.szerokosc - 2*obj.plyta -1
     polki_s.z =obj.glebokosc - 10
