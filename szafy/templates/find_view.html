@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+    wyszukaj szafke po nazwie : 
+    <input type='text' maxlength="100" name='nazwa'> {% csrf_token %}</br></br>
+    <input type='submit' value='szukaj'>
+</form>
+<div name='row'class="row">
+    <div class='cell'> ilosc znalenionych : {{ e }} </br></div>
+    <div class='cell'> ilosc znalenionych : {{ e }} </br></div>
+    {% for e in context %}
+    <div name='row'class="row"> {{ q<int:id> }}  </div> 
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}
+
+
+
+{% block content_2 %}
+
+
+
+{%  endblock %}

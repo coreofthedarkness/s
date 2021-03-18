@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .formularze import SzafkaForm
+from .formularze import SzafkaForm, SzafkaSzukaj
 from .models import Szafka
+
+
 
 class boki:
     y=0
@@ -99,4 +101,28 @@ def szafka_create_view(request,*args,**kwargs):
     }
 
     return render (request, "create_view.html", context)
+
+
+def szafka_find_view(request,*args,**kwargs):
+    context={}
+
+    if request.POST:
+
+        q = Szafka.objects.filter(nazwa__startswith=request.POST['nazwa'])
+        e = Szafka.objects.filter(nazwa__startswith=request.POST['nazwa']).count()
+        context={'e':e,}
+        for i in range (0,e):
+            context['q'+str(i)]= q[i]
+        
+        for klucze in context:
+            print(klucze)
+        
+
+     
+
+        # return redirect ('wynik/')
+    return render (request,'find_view.html',context)
+
+
+
 # Create your views here.

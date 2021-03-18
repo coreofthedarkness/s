@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from szafka.views import szafka_create_view, szafka_rozpisana_view
+from szafka.views import szafka_create_view, szafka_rozpisana_view, szafka_find_view#, szafka_wynik_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('szafka/', szafka_create_view ),
     path('', szafka_create_view),
     path('szafka/<int:id>', szafka_rozpisana_view ),
+    path('find/',  szafka_find_view ),
+   # path('find/wynik',  szafka_wynik_view ),
 ]

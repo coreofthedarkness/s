@@ -1,6 +1,13 @@
 from django import forms
 from .models import Szafka
 
+class SzafkaSzukaj(forms.Form):
+    id_wyszukiwania = forms.IntegerField()
+    
+    class meta:
+        model = Szafka
+        
+
 class SzafkaForm(forms.Form):
 
     nazwa       = forms.CharField (max_length=300)
