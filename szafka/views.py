@@ -108,17 +108,19 @@ def szafka_find_view(request,*args,**kwargs):
 
     if request.POST:
 
-        q = Szafka.objects.filter(nazwa__startswith=request.POST['nazwa'])
-        e = Szafka.objects.filter(nazwa__startswith=request.POST['nazwa']).count()
-        context={'e':e,}
+        q = Szafka.objects.filter(nazwa__contains=request.POST['nazwa']).values()
+        e = Szafka.objects.filter(nazwa__contains=request.POST['nazwa']).count()
+        inner_context = {}
         for i in range (0,e):
-            context['q'+str(i)]= q[i]
+            inner_context['q'+str(i)]= q[i]
         
         for klucze in context:
             print(klucze)
         
 
-     
+        context = { 'context': inner_context, 
+                    'e': e , 
+                    }     
 
         # return redirect ('wynik/')
     return render (request,'find_view.html',context)
