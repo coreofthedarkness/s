@@ -102,6 +102,25 @@ def szafka_create_view(request,*args,**kwargs):
 
     return render (request, "create_view.html", context)
 
+def new_szafka_create_view(request,*args,**kwargs):
+
+    nd_nowa = SzafkaForm()
+    if request.method == 'GET':
+        nd_nowa = SzafkaForm(request.GET)
+        if nd_nowa.is_valid():
+             new = Szafka.objects.create(**nd_nowa.cleaned_data)
+             path= "../szafka/"+str(new.id)
+             return redirect(path)
+        else:
+             print(nd_nowa.errors)
+
+
+    context = {
+       'form': nd_nowa
+    }
+
+    return render (request, "new_create_view.html", context)
+
 
 def szafka_find_view(request,*args,**kwargs):
     context={}

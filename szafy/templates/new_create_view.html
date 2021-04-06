@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>Podaj wymiary szafki dla której chcesz obliczyc płyte w mm </h4>
+<div class='formbox'>
+  <img src ="https://i.ibb.co/VVTX7K8/szafka-rysunek.jpg" class='szafkapic' />
+
+   
+  
+    <form method="GET">{% csrf_token %}
+      
+            <label for="id_nazwa"> Nazwa: </label> <input type="text" name="nazwa" id="id_nazwa" maxlength="300" required size="60">
+      
+            <div class='data'>     
+            <p class='formtextstyle'><label for="id_plyta">Plyta:</label> <input type="number" name="plyta" id="id_plyta" class='dataform' required></p>
+            <p class='formtextstyle'><label for="id_ilosc_drzwi">Ilosc drzwi:</label> <input type="number" name="ilosc_drzwi" id="id_ilosc_drzwi" class='dataform' required></p>
+            <p class='formtextstyle'><label for="id_narozna">Narozna:</label> <input type="checkbox" name="narozna" id="id_narozna" class='dataform' ></p>
+            <p class='formtextstyle'><label for="id_glebokosc_wneki">Glebokosc wneki:<br> 0 jesli brak</label> <input type="number" name="glebokosc_wneki" id="id_glebokosc_wneki" class='dataform' required></p>
+            <p class='formtextstyle'><label for="id_ilosc_polek">Ilosc polek:</label> <input type="number" name="ilosc_polek" id="id_ilosc_polek" class='dataform' required></p>
+            <p class='formtextstyle'><label for="id_wzor_frontu">Wzor frontu:</label> <input type="text" name="wzor_frontu" id="id_wzor_frontu" maxlength="300" class='datatext' required></p>
+            <p class='formtextstyle'><label for="id_wzor_sciany">Wzor sciany:</label> <input type="text" name="wzor_sciany" id="id_wzor_sciany" maxlength="300" class='datatext' required></p><input type="hidden" name="csrfmiddlewaretoken" value="ZT9cM5QDKM1UaNAAao45gPfB529RJGmEVSSJdwrykJWk0uQLqeZ2pDlr2RfG48G1">
+            <input type='submit' value='zapisz' style='margin-left:170px;'>
+          </div>
+
+      <div class='szerokosc'><label for="id_szerokosc" class='formtextstyle'>Szerokosc:</label> <input type="number" name="szerokosc" id="id_szerokosc" required></div>
+      <div class='wysokosc'><label for="id_wysokosc" class='formtextstyle'>Wysokosc:</label> <input type="number" name="wysokosc" id="id_wysokosc" size="5" required></div>
+      <div class='glebokosc'><label for="id_glebokosc" class='formtextstyle'>Glebokosc:</label> <input type="number" name="glebokosc" id="id_glebokosc" required></div>
+
+      
+     
+    </form>
+   
+</div>
+
+{% endblock %}

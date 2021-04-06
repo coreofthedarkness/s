@@ -5,45 +5,95 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
          <style>
         .row{
           width: 100%;
+          margin-left:0px;
+         
+        }
+        .szerokosc{
+          position:absolute;
+          left:240px;
+          top: 160px;
+        }
+        .data{
+          padding-top: 20px;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-bottom: 20px;
+          position:absolute;
+          left:520px;
+          top: 170px;
+          border:#333 dashed 1px;
+        }
+        .dataform{
+          position:absolute;
+          left: 140px;
+        }
+        .formtextstyle{
+          font-size: 13px;
+        }
+        .datatext{
+          position:absolute;
+          left: 100px;
+        }
+        .glebokosc{
+          position:absolute;
+          left:30px;
+          top: 180px;
+        }
+        .szafkapic{
+          position:absolute;
+          left: 120px;
+          top: 170px;
+
+        }
+
+        .wysokosc{
+        position:absolute;
+        top: 350px;
+        left :15px;
         }
 
         .contentbox{
-          padding-top: 10px;
-          padding-left: 10px;
+          padding: 10px;
+         
           width:inherit;
           border:#333 dashed 1px;
 
           }
-          .helptext {
-            position:absolute;
-          left:340px;
-          }
-          input {
-          position:absolute;
-          left:160px;
-          }
 
+
+          input[type=number]{
+           width: 4em;
+          }
 
         .formbox{
-          padding-top: 20px;
-          padding-bottom : 30px;
+          padding-top: 5px;
+          padding-bottom : 5px;
           padding-left: 20px;
-          width:500px;
+          width:inherit;
           border:#333 dashed 1px;
 
           }
 
         .cell{
           display: table-cell;
+          width: 150px;
+          padding-left: 10px;
+          padding-top: 5px;
+          padding-bottom: 10px;
+          border:#333 dashed 1px;
+          }
+          .cellw{
+          display: table-cell;
           width: 200px;
           padding-left: 10px;
           padding-top: 5px;
           padding-bottom: 10px;
           border:#333 dashed 1px;
+          margin-bottom:1em;
           }
         .topnav {
           background-color: #333;
@@ -79,7 +129,8 @@
         body {
           margin-top:0px;
         }
-        }</style>
+        }
+        </style>
 
 
         <title> Szafki Brata Alberta </title>
@@ -93,18 +144,13 @@
           <a href="http://daveoo.pythonanywhere.com/">About</a>
         </div>
 
-        <div style="width :96%; border: 1px;border-color: black; border-style: dashed; margin:10px">
+        <div style="width :100%; border: 1px;border-color: black; border-style: dashed; padding: 10px; height: inherit; ">
           {% block content %}
           zawartosc bloku
           {% endblock %}
         </div>
 
-        </br></br>
-        <div style="width :96%; border: 1px;border-color: black; border-style: dashed; margin:10px">
-          {% block content_2 %}
-          stopka
-          {% endblock %}
-        </div>
+
 
 
 

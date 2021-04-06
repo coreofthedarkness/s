@@ -7,15 +7,15 @@
     <input type='submit' value='szukaj'>
 </form>
 <div name='row'class="row">
-    <div class='cell'>   </br></div>
-    <div class='cell'> ilosc znalenionych : {{ e }} </br></div>
+    <div class='cellw'>   </br></div>
+    <div class='cellw'> ilosc znalenionych : {{ e }} </br></div>
 
    {% for record, values in context.items %}
     <div name='row'class="row"> {{ values.nazwa }} </div> 
-    <div class='cell'> szerokosc : {{ values.szerokosc }} </br></div>
-    <div class='cell'> wysokosc : {{ values.wysokosc }} </br></div>
-    <div class='cell'> glebokosci: {{ values.glebokosc }} </br></div>
-    <div class='cell'> narozna : <a href='http://daveoo.pythonanywhere.com/szafka/{{ values.id }}'>link do rozpisu </a> </br></div>
+    <div class='cellw'> szerokosc : {{ values.szerokosc }} </br></div>
+    <div class='cellw'> wysokosc : {{ values.wysokosc }} </br></div>
+    <div class='cellw'> glebokosci: {{ values.glebokosc }} </br></div>
+    <div class='cellw'> <a href='http://daveoo.pythonanywhere.com/szafka/{{ values.id }}'>link do rozpisu </a> </br></div>
     {% endfor %}
 
 </div>
